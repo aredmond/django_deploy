@@ -2,14 +2,16 @@
 # Cookbook Name:: django_deploy
 # Recipe:: default
 #
-# Copyright (c) 2015 The Authors, All Rights Reserved.
+# Copyright (c) 2015 The Authors, All Rights Reserved
+
 
 include_recipe 'build-essential::default'
+#include_recipe 'build-essential'
 include_recipe 'python'
 
 python_virtualenv '/usr/local/share/.virtualenvs' do
   action :create
-  interpreter 'python2.7'
+#  interpreter 'python2.7'
 end
 
 %w(

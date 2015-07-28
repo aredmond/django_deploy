@@ -6,11 +6,16 @@ provisioner:
   name: chef_zero
 
 platforms:
+  - name: chef/ubuntu-14.04
   - name: ubuntu-14.04
   - name: centos-6.6
 
 suites:
-  - name: default
+  - name: django
     run_list:
       - recipe[django_deploy::default]
+    attributes:
+  - name: python
+    run_list:
+      - recipe[django_deploy::python_cent]
     attributes:
